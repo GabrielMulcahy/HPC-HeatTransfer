@@ -1,0 +1,25 @@
+# This is an example gnuplot script for plotting the temperature
+# values in first coursework assigment (heat transfer).
+# It is assumed that the data to be plotted are in a file called
+# temperature.dat which contains 3 columns: x,y,temperature
+# The plot is sent to a postscript file called temperature.ps 
+# To use this file copy it to the directory/folder containing 
+# temperature.dat and run the command: 
+# gnuplot example_gnuplot_file 
+
+
+# Send output to a PDF file. 14 refers to the font size
+set terminal png color enhanced 14
+# Set the name of the output file
+set output "temperature.png"
+
+# Set ranges and labels for axes
+set xrange [0:0.1]
+set yrange [0:0.1]
+set xlabel "x (m)"
+set ylabel "y (m)"
+
+# Plot the data 
+plot "temperature.dat" with image 
+
+# End of file
